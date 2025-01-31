@@ -6,22 +6,20 @@ using namespace std;
 int main() {
   bool redlight {true};
   bool green {false};
-  if (redlight)
-    {
-    cout << "stop" << endl;
+  if (redlight){
+    cout << "Stop!" << endl;
     }
-    else
-      {
-      cout <<"go" << endl;
+  else{
+      cout <<"Go!" << endl;
       }
-      cout << "sizeof(redlight)  "<< sizeof(redlight)<< endl;
+  cout << "sizeof(redlight)  "<< sizeof(redlight)<< endl;
 
-      //wo boolalpha
-      cout <<"Red: "<< redlight << endl;
-      cout <<"Gren: "<< green << endl;
+  //wo boolalpha
+  cout <<"Red: "<< redlight << endl;
+  cout <<"Gren: "<< green << endl;
 
-          //w boolalpha
-          cout << boolalpha;
+  //w boolalpha
+  cout << boolalpha;
   cout <<"Red: "<< redlight << endl;
   cout <<"Gren: "<< green << endl;
 
