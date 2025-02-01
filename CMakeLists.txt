@@ -3,4 +3,4 @@ project(practice)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(practice "Variables and datatypes/auto.cpp")
+add_executable(practice BasicOperations.cpp)
