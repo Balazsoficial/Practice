@@ -3,4 +3,4 @@ project(practice)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(practice Booleans.cpp)
+add_executable(practice Characters.cpp)
