@@ -60,5 +60,22 @@ int main()
     cout << endl;
     cout <<"Positive number: " << pos_num << endl;
     cout <<"Negative number: " << neg_num << endl;
+    cout << endl;
+
+       //different number systems,
+ int pos_int = 7126378;
+ cout << uppercase;//set lowercase by default
+ cout << "decimal number: " <<dec <<pos_int << endl;
+ cout << "hexadecimal number: "<<hex << pos_int << endl;
+ cout << "octal number: "<<oct<< pos_int << endl;
+
+ //with floating point numbers you can change to scientific with cout<< scientific;
+ //you can change the length of the displayed number wiith setprecision fe.: 12.0000->12.000000000
+ double asd= 12;
+ cout << asd << endl;
+ cout << showpoint ; //shows the decimal point so it would be 12.0000 at whole numbers you can use noshowpoint to remove the 0 12.0->12
+ cout << asd << endl;
+
+
         return 0;
     }
