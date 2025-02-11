@@ -13,7 +13,7 @@ int main()
     cout << "The range for long is from " << numeric_limits<long>::min() << " to " << numeric_limits<long>::max() << endl;
     cout << "The range for float is from " << numeric_limits<float>::min() << " to " << numeric_limits<float>::max() << endl;
     cout << "The range for double is from " << numeric_limits<double>::min() << " to " << numeric_limits<double>::max() << endl;
-    cout << "The range for long fouble is from " << numeric_limits<long double>::min() << " to " << numeric_limits<long double>::max() << endl;
+    cout << "The range for long double is from " << numeric_limits<long double>::min() << " to " << numeric_limits<long double>::max() << endl;
 
 
 
