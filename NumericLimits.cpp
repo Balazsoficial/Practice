@@ -16,5 +16,4 @@ int main()
     cout << "The range for long double is from " << numeric_limits<long double>::min() << " to " << numeric_limits<long double>::max() << endl;
 
 
-
     }
