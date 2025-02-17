@@ -26,5 +26,18 @@ int main() {
     else
       cout << number1 << " is not less than " << number2 << endl;
 
+  //nested
+
+  bool red = true;
+  bool green = false;
+  bool stop =true;
+
+  if (red && stop == true) {
+    cout << "stop" << endl;
+  }
+  else {
+    cout << "go" << endl;
+  }
+
 
 }
