@@ -21,7 +21,7 @@ int main() {
 
      cout << "sizeof(result1) = " << sizeof(result1) << endl;
      cout << "sizeof(result2) = " << sizeof(result2) << endl;
-
+//we can see that the compiler uses int aince it cant perform operation on less than 4 byte operators supposedly so be aware 
 
 
 }
