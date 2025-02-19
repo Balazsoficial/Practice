@@ -10,7 +10,6 @@ int main() {
     bool result = number1 < number2;
     cout << boolalpha <<"result: "<< result << endl;
 
-
     if (result == true) {
       cout << number1 << " is less than " << number2 << endl;
     }
