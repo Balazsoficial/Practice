@@ -4,17 +4,17 @@
 #include <iostream>
 using namespace std;
 
-int pen =10;
-int marker =20;
-int rectangle =30;
-int circle =40;
-int eraser =50;
-int ellipse =60;
+const int pen =10;
+const int marker =20;
+const int rectangle =30;
+const int circle =40;
+const int eraser =50;
+const int ellipse =60;
 
 int main() {
 
 
-        int tool{circle};
+        int tool=circle;
 
         if (tool ==pen)
           {
