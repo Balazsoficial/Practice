@@ -22,7 +22,5 @@ int main() {
     cout << "var8 occupies: " << sizeof(var8) <<" bytes"<< endl;
 
 
-
-
     return 0;
 }
