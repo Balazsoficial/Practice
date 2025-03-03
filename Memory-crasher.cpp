@@ -1,6 +1,7 @@
 //
 // Created by Balazsoficial on 2025. 03. 03..
 //
+//Ps dont run it it will instantly crash your computer
 #include <iostream>
 using namespace std;
 int main () {
