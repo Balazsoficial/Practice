@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 int main () {
-
+// you shouldn't make these issues
 // we can use std:nothrow
   for (size_t i =0; i<1000000;i++) {
   try{
