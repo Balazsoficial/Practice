@@ -13,6 +13,7 @@ int main () {
     int * nums = new int[1000000];
   }__catch(exception& ex){
     cout << "Something went wrong: " << ex.what() << endl;
+
   }
 
   }
