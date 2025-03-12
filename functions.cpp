@@ -10,6 +10,7 @@ void say_hello();
 int luckynumber();
 double increment_multiple(double a, double b);
 //Here I am splitting the function declaration and the definition but this is not necessary
+//The function declarations and definitions can be put into any file inside the program
 int main() {
 
     int num1 =2;
