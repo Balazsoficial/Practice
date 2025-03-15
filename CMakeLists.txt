@@ -3,4 +3,4 @@ project(practice)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXE_LINKER_FLAGS "-static")
-add_executable(practice output-parameters.cpp)
+add_executable(practice returning-by-value.cpp)
