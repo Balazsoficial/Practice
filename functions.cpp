@@ -29,7 +29,6 @@ void enter_bar(unsigned age) {
     else {
         cout << "You are too young to enter" << endl;
     }
-
 }
 int max(int a, int b) {
     return a > b ? a : b;
