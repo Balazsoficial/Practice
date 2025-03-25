@@ -33,5 +33,4 @@ int main(){
         cout <<"&of outer a: " <<&b << endl;
         func1();
     }
-
 }
