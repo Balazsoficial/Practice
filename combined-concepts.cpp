@@ -14,7 +14,7 @@ template<typename T>
 concept MyIntegral = is_integral_v<T>; //typename lib can be used
 template<typename T>
 requires  Multipliable<T> &&  MyIntegral<T> T add (T a, T b) {  //||(or) and &&(and) operators can be used
-    return a + b;  //does not check for value just for valid syntax
+    return a + b;
 }
 
 int main() {
