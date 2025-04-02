@@ -34,6 +34,6 @@ int main() {
     something();
     std::cout << "done"<<std::endl;
     return 0;
-
+//releasing pointer class objects also calls the destructor
 
 }
