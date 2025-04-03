@@ -27,7 +27,7 @@ Dog::~Dog() {
     std::cout <<"Dog destructor called for : "<< name<<std::endl;
 }
 void something() {
-    Dog my_dog("Dawg","sheperd",2);
+    Dog my_dog("Dawg","shepherd",2);
 }
 
 int main() {
