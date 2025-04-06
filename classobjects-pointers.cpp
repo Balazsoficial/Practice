@@ -5,7 +5,6 @@
 #include <iostream>
 using namespace std;
 int main() {
-
     Cylinder c1 = Cylinder(11,20);
     cout << "Volume of c1: " << c1.volume() << endl;
     Cylinder * c3 =&c1; //can initialize like this using another ones adress
