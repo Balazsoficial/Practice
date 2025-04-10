@@ -8,6 +8,8 @@
 using namespace std;
 int main(int argc,char * argv[ ]) {
     string filename="D:/Dokumentumok/Nuclear Launch Codes/cpp-console/practice/text.txt";
+    ofstream copy;
+    copy.open("D:/Dokumentumok/Nuclear Launch Codes/cpp-console/practice/texasdt.txt");
     ifstream input;
     input.open(filename);
     vector <string> name;
@@ -22,7 +24,10 @@ int main(int argc,char * argv[ ]) {
         string line;
 
         getline (input, line, ' ');
-        input >>ws;
+        if (line.find('\n')) {
+            line = line.replace(line.find('\n'),string::npos," ");
+        }
+        copy << line ;
         
 
 
@@ -42,10 +47,7 @@ int main(int argc,char * argv[ ]) {
         }
 
     }
-    int k =2;
 
-    cout << time[k] << endl;
-    cout << action[k] << endl;
-    cout << name [k] << endl;
+    copy.close();
 
 }
