@@ -33,8 +33,8 @@ public:
     }
     */
 protected:
-    string first_name ="Mysterious";
-    string last_name ="Person";
+    string first_name ="Tim";
+    string last_name ="Cheese";
 };
 class Player :public Person {
     friend std::ostream& operator<<(std::ostream& out, const Player& player) {
@@ -58,9 +58,5 @@ int main()
 {
     Player player("basketball","John","Pork");  //now i can initialize with last and first name param
     cout << "player : " << player<< endl;
-
-
-
-
 
 }
