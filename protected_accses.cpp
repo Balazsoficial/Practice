@@ -52,7 +52,6 @@ public:
 
 private:
     string m_game="None";
-
 };
 int main()
 {
