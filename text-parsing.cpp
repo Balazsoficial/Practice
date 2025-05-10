@@ -27,8 +27,7 @@ int main(int argc,char * argv[ ]) {
         if (line.find('\n')) {
             line = line.replace(line.find('\n'),string::npos," ");
         }
-        copy << line ;
-        
+        copy << line ;        
 
 
 
