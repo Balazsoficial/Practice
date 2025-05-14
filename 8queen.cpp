@@ -7,14 +7,18 @@ int sor[9] ;
 int tabla[9][9];
 int bastya =0;
 int ratlo [9];
-int batlo [15];
+int batlo [9];
 int oszlop [9];
+int szam =0;
 void backtracking (int szint);
 bool free(int Sor,int Oszlop);
 void PrintBoard();
 void Reset();
+void alloc(int Sor, int Oszlop,int Szint);
 int main() {
+    Reset();
     backtracking (1);
+    cout << szam << endl;
 
 
 
@@ -26,30 +30,37 @@ void PrintBoard() {
         for (int j = 1; j < 9; j++) {
             cout << tabla[i][j] <<'\t' ;
         }
+
         cout << endl;
     }
+    cout << endl;
+    //cout << szam << endl; // debug
+    szam ++;
 
 }
 
 void backtracking (int szint) {
     if (szint == 9) {
         PrintBoard();
-        Reset();
-        cout << endl;
     }
     else {
-        for (int i = 1; i <= 9; i++) {
-            for (int j = 1; j < 9; j++) {
-                if (tabla[i][j]==0 && free(i,j) )
+            for (int j = 1; j <= 8; j++) {
+                if (tabla[szint][j]==0 && free(szint,j) )
                 {
 
-                    tabla[i][j] = szint;
+                    tabla[szint][j] = szint;
+                  //  PrintBoard();
+                    alloc(szint,j,szint);
                     backtracking (szint+1);
-                    tabla[i][j] = 0;}
+                    sor[szint] = 1844;
+                    oszlop[szint] = 1844;
+                    ratlo[szint] = 1844;
+                    batlo[szint] = 1844;
+                    tabla[szint][j] = 0;}
             }
 
 
-        }
+
 
     }
 
@@ -57,52 +68,47 @@ void backtracking (int szint) {
 bool free(int Sor,int Oszlop) {
     //ratlo
     for (int i = 1; i < 9; i++) {
-        if (ratlo[i]==Sor+Oszlop) {
+        if (ratlo[i]==Sor-Oszlop && ratlo[i]!= 1844) {
           //  cout <<"false" << ratlo[i]<< "  "<<i << "  "<< oszlop+sor << "\t";
             return false;
-        }
-        else if (ratlo[i]==0) {
-            ratlo[i] = Sor+Oszlop;
-      //      cout <<"trues" << ratlo[i]<< "  "<<i <<"  "<< oszlop+sor << "\t";
-
-
-        }
-
+            }
         }
         //batlo
-        for (int i = 1; i < 15; i++) {
-            if (batlo[i]==Sor-Oszlop&&batlo[i]!=0) {
-                  cout <<"false" << ratlo[i]<< "  "<<i << "  "<< Oszlop+Sor << "\t";
+        for (int i = 1; i < 9; i++) {
+            if (batlo[i]==Sor+Oszlop&&batlo[i]!=1844) {
+                 // cout <<"false" << ratlo[i]<< "  "<<i << "  "<< Oszlop+Sor << "\t";
 
                 return false;
             }
-            else if (batlo[i]==0) {
-                batlo[i] = Sor-Oszlop;
-                //      cout <<"trues" << ratlo[i]<< "  "<<i <<"  "<< oszlop+sor << "\t";
-
-
-            }
         }
-    if (sor[Sor]==0) {
-        sor[Sor] = 1;
+    for (int i = 1; i < 9; i++) {
+        if (oszlop[i] == Oszlop ) {
+            return false;
+        }
     }
-    else {
-        return false;
+
+    for (int i = 1; i < 9; i++) {
+        if (sor[i] == Sor ) {
+            return false;
+        }
     }
-    if (oszlop[Oszlop]==0) {
-        oszlop[Oszlop] = 1;
-    }
-    else
-        return false;
+
+
 
 
     return true;
 }
 void Reset() {
     for (int i = 1; i < 9; i++) {
-        ratlo[i] = 0;
+        ratlo[i] = 1844;
     }
-    for (int i = 1; i < 15; i++) {
-        batlo[i] = 0;
+    for (int i = 1; i < 9; i++) {
+        batlo[i] = 1844;
     }
+}
+void alloc(int Sor, int Oszlop, int Szint ) {
+    sor[Szint] = Sor;
+    oszlop[Szint] = Oszlop;
+    ratlo[Szint] = Sor-Oszlop;
+    batlo[Szint] = Sor+Oszlop;
 }
