@@ -2,113 +2,107 @@
 // Created by Balazsoficial on 2025. 05. 13..
 //
 #include <iostream>
+#include <chrono>
 using namespace std;
-int sor[9] ;
-int tabla[9][9];
-int bastya =0;
-int ratlo [9];
-int batlo [9];
-int oszlop [9];
-int szam =0;
-void backtracking (int szint);
-bool free(int Sor,int Oszlop);
+const int n = 8;
+
+int tabla[27][27];
+int ratlo[27];
+int batlo[27];
+int oszlop[27];
+int szam = 0;
+int filler = 1488;
+
+void backtracking(int szint);
+
+bool free(int Sor, int Oszlop);
+
 void PrintBoard();
+
 void Reset();
-void alloc(int Sor, int Oszlop,int Szint);
+
+void alloc(int Sor, int Oszlop, int Szint);
+
 int main() {
     Reset();
-    backtracking (1);
+    auto start = std::chrono::high_resolution_clock::now();
+    backtracking(1);
     cout << szam << endl;
-
-
-
-
-
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = duration_cast<std::chrono::nanoseconds>(stop - start);
+    cout << duration.count() << " ns" << endl;
+    cout << duration_cast<std::chrono::seconds>(stop - start).count() << " second" << endl;
 }
+
 void PrintBoard() {
-    for (int i = 1; i < 9; i++) {
-        for (int j = 1; j < 9; j++) {
-            cout << tabla[i][j] <<'\t' ;
+    for (int i = 1; i < n + 1; i++) {
+        for (int j = 1; j < n + 1; j++) {
+            cout << tabla[i][j] << '\t';
         }
 
         cout << endl;
     }
     cout << endl;
     //cout << szam << endl; // debug
-    szam ++;
-
 }
 
-void backtracking (int szint) {
-    if (szint == 9) {
-        PrintBoard();
-    }
-    else {
-            for (int j = 1; j <= 8; j++) {
-                if (tabla[szint][j]==0 && free(szint,j) )
-                {
-
-                    tabla[szint][j] = szint;
-                  //  PrintBoard();
-                    alloc(szint,j,szint);
-                    backtracking (szint+1);
-                    sor[szint] = 1844;
-                    oszlop[szint] = 1844;
-                    ratlo[szint] = 1844;
-                    batlo[szint] = 1844;
-                    tabla[szint][j] = 0;}
+void backtracking(int szint) {
+    if (szint == n + 1) {
+        szam++;
+        //  PrintBoard();
+    } else {
+        for (int j = 1; j <= n; j++) {
+            if (tabla[szint][j] == 0 && free(szint, j)) {
+                tabla[szint][j] = szint;
+                //  PrintBoard();
+                alloc(szint, j, szint);
+                backtracking(szint + 1);
+                oszlop[szint] = filler;
+                ratlo[szint] = filler;
+                batlo[szint] = filler;
+                tabla[szint][j] = 0;
             }
-
-
-
-
+        }
     }
-
 }
-bool free(int Sor,int Oszlop) {
+
+bool free(int Sor, int Oszlop) {
     //ratlo
-    for (int i = 1; i < 9; i++) {
-        if (ratlo[i]==Sor-Oszlop && ratlo[i]!= 1844) {
-          //  cout <<"false" << ratlo[i]<< "  "<<i << "  "<< oszlop+sor << "\t";
-            return false;
-            }
-        }
-        //batlo
-        for (int i = 1; i < 9; i++) {
-            if (batlo[i]==Sor+Oszlop&&batlo[i]!=1844) {
-                 // cout <<"false" << ratlo[i]<< "  "<<i << "  "<< Oszlop+Sor << "\t";
-
-                return false;
-            }
-        }
-    for (int i = 1; i < 9; i++) {
-        if (oszlop[i] == Oszlop ) {
+    for (int i = 1; i < n + 1; i++) {
+        if (ratlo[i] == Sor - Oszlop && ratlo[i] != filler) {
+            //  cout <<"false" << ratlo[i]<< "  "<<i << "  "<< oszlop+sor << "\t";
             return false;
         }
     }
+    //batlo
+    for (int i = 1; i < n + 1; i++) {
+        if (batlo[i] == Sor + Oszlop && batlo[i] != filler) {
+            // cout <<"false" << ratlo[i]<< "  "<<i << "  "<< Oszlop+Sor << "\t";
 
-    for (int i = 1; i < 9; i++) {
-        if (sor[i] == Sor ) {
             return false;
         }
     }
-
-
+    for (int i = 1; i < n + 1; i++) {
+        if (oszlop[i] == Oszlop) {
+            return false;
+        }
+    }
 
 
     return true;
 }
+
 void Reset() {
-    for (int i = 1; i < 9; i++) {
-        ratlo[i] = 1844;
+    for (int i = 1; i < n + 1; i++) {
+        ratlo[i] = filler;
     }
-    for (int i = 1; i < 9; i++) {
-        batlo[i] = 1844;
+    for (int i = 1; i < n + 1; i++) {
+        batlo[i] = filler;
     }
 }
-void alloc(int Sor, int Oszlop, int Szint ) {
-    sor[Szint] = Sor;
+
+void alloc(int Sor, int Oszlop, int Szint) {
     oszlop[Szint] = Oszlop;
-    ratlo[Szint] = Sor-Oszlop;
-    batlo[Szint] = Sor+Oszlop;
+    ratlo[Szint] = Sor - Oszlop;
+    batlo[Szint] = Sor + Oszlop;
 }
