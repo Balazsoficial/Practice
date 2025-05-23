@@ -13,7 +13,6 @@ public:
     Person(string& first_name_param,string& last_name_param) {
         this->last_name=last_name_param;
         this->first_name=first_name_param;
-
     }
     ~Person()=default;
 
