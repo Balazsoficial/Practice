@@ -4,7 +4,7 @@
 #include <iostream>
 #include <chrono>
 using namespace std;
-const int n = 8;
+const int n = 13;
 
 int tabla[27][27];
 int ratlo[27];
@@ -33,6 +33,7 @@ int main() {
     cout <<"Time in Nanoseconds:   " << duration_cast<std::chrono::nanoseconds>(stop - start)  << endl;
     cout << "Time in milliseconds: " <<  duration_cast<std::chrono::milliseconds>(stop - start)  << endl;
     cout <<"Time in Seconds:       "<< duration_cast<std::chrono::seconds>(stop - start).count() << "s" << endl;
+
 }
 
 void PrintBoard() {
@@ -50,7 +51,7 @@ void PrintBoard() {
 void backtracking(int szint) {
     if (szint == n + 1) {
         szam++;
-        PrintBoard();
+      //  PrintBoard();
     } else {
         for (int j = 1; j <= n; j++) {
             if (tabla[szint][j] == 0 && free(szint, j)) {
