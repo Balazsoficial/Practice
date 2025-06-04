@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.30)
-project(practice)
-
-include_directories(C:/Users/Balazsoficial\.vcpkg-clion/vcpkg/installed/x64-windows/include)
+project(Practice)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXE_LINKER_FLAGS "-static")
-add_executable(practice nasa.cpp  )
+add_executable(Practice nasa.cpp  )
+find_package(cpr CONFIG REQUIRED)
+target_link_libraries(Practice PRIVATE cpr::cpr)
