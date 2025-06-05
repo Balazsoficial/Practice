@@ -29,10 +29,11 @@ int main(){
         cpr::Response x = cpr::Download(of, cpr::Url{j[0]["hdurl"]});
         if (x.status_code != 200) {
             cout << "There was an issue while downloading" << endl;
+            std::cout << "http status code = " << x.status_code << std::endl << std::endl;
             _sleep(1000);
         }
 
-        std::cout << "http status code = " << x.status_code << std::endl << std::endl;
+        //std::cout << "http status code = " << x.status_code << std::endl << std::endl;
 
     }
 
