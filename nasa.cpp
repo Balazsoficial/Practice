@@ -6,6 +6,7 @@
 #include <nlohmann/json.hpp>
 #include <filesystem>
 #include <ctime>
+#include "nasahelper.h"
 using json = nlohmann::json;
 using namespace  std;
 const string appdata = getenv("APPDATA");
@@ -24,6 +25,7 @@ int main(){
     if(!apifile.is_open()) {
         cout << "Error opening api file" << endl;
         exit(1);
+
     }
     string line;
     apifile.clear();
