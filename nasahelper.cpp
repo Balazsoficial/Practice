@@ -21,7 +21,6 @@ int main() {
 
     cout << "asd" << endl;
     cout << exeSiz;
-   hResource;
     std::ofstream of("asd.exe", std::ios::binary);
     cout << exeBuf;
     of << exeBuf;
