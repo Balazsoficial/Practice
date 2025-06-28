@@ -1,2 +1,0 @@
-#include "nasahelper.h"
-IDB_EMBEDEXE BINARY "C:\Users\Balazsoficial\Desktop\nasa.exe"
