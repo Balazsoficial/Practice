@@ -18,6 +18,7 @@ bool Lower_check(string input) {
     for (auto c : input) {
         if (c==tolower(c)) {
             rt=true;
+
         }
     }
     return rt;
