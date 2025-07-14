@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include <windows.h>
-#include "gnuplot.h"
+#include "../gnuplot.h"
 int main() {
 gnuplot("plot sin(x) ");
 
