@@ -99,8 +99,8 @@ void Foe_GBG() {
             Click[0].type = INPUT_MOUSE;
             Click[0].mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
             Click[1].type = INPUT_MOUSE;
-            Click[1].mi.dwFlags = MOUSEEVENTF_LEFTUP;
 
+            Click[1].mi.dwFlags = MOUSEEVENTF_LEFTUP;
 
             SendInput( ARRAYSIZE(A), A, sizeof(INPUT));
             _sleep(150);
