@@ -38,11 +38,14 @@ string input;
 
 }
 void Clicker() {
+    bool capslock=false;
     boolean exit = false;
+    if (GetAsyncKeyState(VK_CAPITAL))
+        capslock=!capslock;
     while (!exit) {
 
 
-        if (GetAsyncKeyState(VK_CAPITAL)) {
+        if (capslock) {
                    INPUT inputs[2] = {};
 
             inputs[0].type = INPUT_MOUSE;
