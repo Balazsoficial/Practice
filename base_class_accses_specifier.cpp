@@ -10,12 +10,22 @@ public:
 private:
     string st;
 };
-class Player : protected Person {
+class Player : private Person {
 public:
-    void SetSomething(int s) { //whit protected inheritence i can still change the value of something
+    void SetSomething(int s) { //whit protected inheritance I can still change the value of something
         something=s;
     }
+    int GetSomething() {
+        return something;
+    }
     int age;
+
+};
+class James : public Player {
+    public:
+    void SetSomethingagain(int s) {
+        something =s;  //member is inaccessible because private inheritance is selfish
+    }
 
 };
 //private>protected>public
@@ -23,7 +33,9 @@ public:
 int main() {
     Player p;
     p.something =1; // when inheritance is private or protected, this member is inaccessible only when is public becomes accessible
-
+    p.GetSomething();
+    James j;
+    j.SetSomething(1);
 
 
 
