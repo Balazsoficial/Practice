@@ -47,14 +47,26 @@ public:
         this->first_name=first_name_param;
         this->m_game=game_param;
     }
+   Player(std::string_view game_param)
+    :m_game(game_param) {
+        first_name="john";
+        last_name="pork"; //setting members from derived class
+    }
     ~Player()=default;
 
 private:
     string m_game="None";
+
 };
+
+
 int main()
 {
-    Player player("basketball","John","Pork");  //now i can initialize with last and first name param
+    Player player("basketball");  //now i can initialize with last and first name param
     cout << "player : " << player<< endl;
+    Player player2("football", "tibor" ,"test");
+    cout << "player : " << player2<< endl;
+    //cant change values from outside only from inside of the derived class
+
 
 }
